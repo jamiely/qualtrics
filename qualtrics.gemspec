@@ -18,6 +18,7 @@ Gem::Specification.new do |gem|
   gem.add_dependency 'rest-client'
   gem.add_dependency 'json'
   gem.add_dependency 'representable'
+  gem.add_dependency 'libxml-ruby'
 
   gem.add_development_dependency 'rspec'
 end

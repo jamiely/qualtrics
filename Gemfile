@@ -6,6 +6,7 @@ gemspec
 gem 'rest-client'
 gem 'json'
 gem 'representable'
+gem 'libxml-ruby'
 
 group :development do
   gem 'pry'

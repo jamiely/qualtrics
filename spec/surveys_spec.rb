@@ -32,6 +32,12 @@ describe "a survey" do
     it "has an id" do
       @survey.id.should be(@survey_id)
     end
+
+    it "can load additional detail" do
+      @survey.load!
+      @survey.survey_name.should_not be nil
+      @survey.survey_name.should_not be_empty
+    end
   end
 
   describe "with an example hash" do
