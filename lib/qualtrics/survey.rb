@@ -20,7 +20,9 @@ module Qualtrics
     ATTRS.each do |a|
       property a
     end
-    property :survey_id # not part of ATTRS
+    %w{survey_id response_counts response_count}.each do |p|
+      property p.to_sym
+    end
 
     # Retrieves the number of responses
     def response_counts!(start_date = Time.parse('2000-1-1'), end_date = Time.now.utc)
@@ -31,7 +33,7 @@ module Qualtrics
     end
 
     def response_counts(*args)
-      response_counts! *args
+      response_counts! *args if @response_counts.nil?
       @response_counts
     end
 
