@@ -10,14 +10,14 @@ describe "a survey" do
     surveys = @client.get_surveys_raw
     surveys.should_not be_empty
     surveys.first.class.should be Hash
-    puts surveys
   end
 
   it "gets a list of survey objects" do
     surveys = @client.get_surveys
     surveys.should_not be_empty
     surveys.first.class.should be Qualtrics::Survey
-    puts surveys.collect &:to_json
+    surveys.first.id.should_not be nil
+    surveys.first.id.should_not be_empty
   end
 
   describe "loaded from Qualtrics" do
