@@ -5,6 +5,8 @@ gemspec
 
 gem 'rest-client'
 gem 'json'
+gem 'representable'
+
 group :development do
   gem 'pry'
 end
