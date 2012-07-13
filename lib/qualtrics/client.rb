@@ -44,6 +44,9 @@ module Qualtrics
     def get_surveys
       raw = get_surveys_raw
       raw.collect do |s|
+        s.each do |k, v|
+          s[k.to_s] = v
+        end
         Survey.from_hash s
       end
     end
